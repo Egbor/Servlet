@@ -1,37 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Booking</title>
-</head>
-<body>
-	<form method="post" action="FrontController">
-		<input type="hidden" name="command" value="SIGN_UP_USER">
-		<input name="userLogin">
-		<input type="password" name="userPassword">
-		<button type="submit">Sign up</button>
-	</form>
-	<form method="post" action="FrontController">
-		<input type="hidden" name="command" value="SIGN_IN_USER">
-		<input name="userLogin">
-		<input type="password" name="userPassword">
-		<button type="submit">Sign in</button>
-	</form>
-	<c:out value="${param.message}"/>
-	
-<!-- <form method="post" action="FrontController">
-		<input type="hidden" name="command" value="GET_ALL_USERS">
-		<button type="submit">Show</button>
-	</form>
-	<c:set var="users" value="${requestScope.users}"/>
-	<c:if test="${users != null}">
-		<c:forEach var="user" items="${users}">
-			<c:out value="${user.getId()}"/>
-			<c:out value="${user.getLogin()}"/>
-			<c:out value="${user.getPassword()}"/>
-		</c:forEach>
-	</c:if> -->
+	<script type="text/javascript" src="js/language.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<title>Booking</title>
+	</head>
+	<body>
+		<button onclick=switchToEnglish()>En</button>
+		<button onclick=switchToRussion()>Ru</button>
+		<form method="post" action="FrontController">
+			<input type="hidden" name="command" value="SIGN_UP_USER">
+			<label class="lang-en" for="userlogin">Login:</label>
+			<label class="lang-ru" for="userLogin">Логин:</label>
+			<input name="userLogin">
+			<label class="lang-en" for="userPassword">Password:</label>
+			<label class="lang-ru" for="userPassword">Пароль:</label>
+			<input type="password" name="userPassword">
+			<button class="lang-en" type="submit">Sign up</button>
+			<button class="lang-ru" type="submit">Зарегестрироваться</button>
+		</form>
+		<form method="post" action="FrontController">
+			<input type="hidden" name="command" value="SIGN_IN_USER">
+			<label class="lang-en" for="userlogin">Login:</label>
+			<label class="lang-ru" for="userLogin">Логин:</label>
+			<input name="userLogin">
+			<label class="lang-en" for="userPassword">Password:</label>
+			<label class="lang-ru" for="userPassword">Пароль:</label>
+			<input type="password" name="userPassword">
+			<button class="lang-en" type="submit">Sign in</button>
+			<button class="lang-ru" type="submit">Войти</button>
+		</form>
+		<c:out value="${param.message}"/>
 </body>
 </html>
